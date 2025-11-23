@@ -29,7 +29,7 @@ namespace HrBackend.Controllers
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee(long id)
+        public async Task<ActionResult<Employee>> GetEmployee([FromRoute] long id)
         {
             var employee = await _context.Employees.FindAsync(id);
 
@@ -80,8 +80,8 @@ namespace HrBackend.Controllers
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
-           // return CreatedAtAction("GetEmployee", new { id = employee.Id }, employee);
-           return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, employee);
+            // return CreatedAtAction("GetEmployee", new { id = employee.Id }, employee);
+            return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, employee);
         }
 
         // DELETE: api/Employees/5
