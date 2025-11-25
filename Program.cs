@@ -1,10 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using HrApi.Models;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.AddValidatorsFromAssemblyContaining<EmployeeValidator>();
+builder.Services.AddFluentValidationAutoValidation();
+//builder.Services.AddAutoMapper(Action<IMapperConfigurationExpression> configure);
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<EmployeeProfile>();  // add as many profiles as you have
+});
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<HrContext>(opt =>

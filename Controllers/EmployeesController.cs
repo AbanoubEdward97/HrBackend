@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HrApi.Models;
+using AutoMapper;
 
 namespace HrBackend.Controllers
 {
@@ -14,10 +15,11 @@ namespace HrBackend.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly HrContext _context;
-
-        public EmployeesController(HrContext context)
+        private readonly IMapper _mapper;
+        public EmployeesController(HrContext context , IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Employees
@@ -75,8 +77,13 @@ namespace HrBackend.Controllers
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public async Task<ActionResult<Employee>> PostEmployee([FromBody]AddEmpDTO newEmp)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var employee = _mapper.Map<Employee>(newEmp);
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
