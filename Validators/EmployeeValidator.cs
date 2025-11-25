@@ -10,12 +10,32 @@ public class EmployeeValidator : AbstractValidator<AddEmpDTO>
         .WithMessage("Name must be in title case (e.g., 'John Doe').");
 
         RuleFor(x => x.BirthDate)
+       .NotEmpty()
+       .WithMessage("BirthDate is Required")
+       .Must(olderThan18)
+       .WithMessage("Employee Must be At Least 18 Years Old.")
+       .Must(YoungerThan60)
+       .WithMessage("Employee Must be Younger than 18 Years Old.");
+
+        RuleFor(x => x.PhoneNumber)
         .NotEmpty()
-        .WithMessage("BirthDate is Required")
-        .Must(olderThan18)
-        .WithMessage("Employee Must be At Least 18 Years Old.")
-        .Must(YoungerThan60)
-        .WithMessage("Employee Must be Younger than 18 Years Old.");
+        .WithMessage("Phone is Required")
+        .Matches(@"^0(10|11|12|15)\d{8}$")
+        .WithMessage("Invalid phone number");
+
+        RuleFor(x=> x.AttendDate)
+        .NotEmpty()
+        .WithMessage("Attend Date is Required")
+        .LessThanOrEqualTo(DateTime.Today)
+        .WithMessage("Attend Date cannot be in the future");
+
+        RuleFor(x=>x.LeaveDate)
+        .NotEmpty()
+        .WithMessage("Leave Date is Required")
+        .LessThanOrEqualTo(DateTime.Today)
+        .WithMessage("Leave Date cannot be in the future")
+        .GreaterThan(x=>x.AttendDate)
+        .WithMessage("Leave Date must be greater than Attend Date");
     }
 
     private bool IsTitleCase(string Name)
@@ -24,7 +44,7 @@ public class EmployeeValidator : AbstractValidator<AddEmpDTO>
         {
             return false;
         }
-        var Words = Name.Split(' ',StringSplitOptions.RemoveEmptyEntries);
+        var Words = Name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         foreach (var word in Words)
         {
             if (!char.IsUpper(word[0]))
@@ -47,15 +67,15 @@ public class EmployeeValidator : AbstractValidator<AddEmpDTO>
         var today = DateOnly.FromDateTime(DateTime.Today);
         var age = today.Year - birthDate.Year;
 
-        if (today.AddYears(-age) < birthDate ) --age;
-        return age >=18;
+        if (today.AddYears(-age) < birthDate) --age;
+        return age >= 18;
     }
 
     private bool YoungerThan60(DateOnly birthDate)
     {
         var today = DateOnly.FromDateTime(DateTime.Today);
         var age = today.Year - birthDate.Year;
-        if (today.AddYears(-age) < birthDate ) --age;
+        if (today.AddYears(-age) < birthDate) --age;
         return age <= 60;
     }
 }
