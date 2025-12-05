@@ -49,7 +49,8 @@ builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 // Add services to the container.
 builder.Services.AddAuthorization();
 builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<HrContext>();
-builder.Services.AddScoped<IAuthService,AuthService>();
+//builder.Services.AddScoped<IAuthService,AuthService>();
+builder.Services.AddScoped<JWTService>();
 builder.Services.AddControllers();
 builder.Services.AddValidatorsFromAssemblyContaining<EmployeeValidator>();
 builder.Services.AddFluentValidationAutoValidation();
@@ -69,8 +70,10 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(o =>
 {
+    var jwtSettings = builder.Configuration.GetSection("JWT").Get<JWT>();
     o.RequireHttpsMetadata = false;
     o.SaveToken = false ;
+
     o.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
@@ -79,7 +82,7 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true ,
         ValidIssuer = builder.Configuration["JWT:Issuer"],
         ValidAudience = builder.Configuration["JWT:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:key"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.key))
     };
 });
 var app = builder.Build();
