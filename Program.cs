@@ -26,29 +26,43 @@ async Task SeedSuperAdminAsync(WebApplication app)
     string email = "abanoub.edward97101@gmail.com";
     string password = "Admin@123";
     // 🔥 Add these fields to avoid NULL constraint violation
-       
+
 
     var admin = await userManager.FindByEmailAsync(email);
     if (admin == null)
     {
-        admin = new ApplicationUser {
-            UserName=email , 
-            Email = email , 
+        admin = new ApplicationUser
+        {
+            UserName = email,
+            Email = email,
             EmailConfirmed = true,
             FirstName = "Abanoub",
             LastName = "Edward"
         };
-        await userManager.CreateAsync(admin,password);
-        await userManager.AddToRoleAsync(admin,"SuperAdmin");
+        await userManager.CreateAsync(admin, password);
+        await userManager.AddToRoleAsync(admin, "SuperAdmin");
     }
 
 }
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+    policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 // Add services to the container.
 builder.Services.AddAuthorization();
-builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<HrContext>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HrContext>();
 //builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<JWTService>();
 builder.Services.AddControllers();
@@ -72,14 +86,14 @@ builder.Services.AddAuthentication(options =>
 {
     var jwtSettings = builder.Configuration.GetSection("JWT").Get<JWT>();
     o.RequireHttpsMetadata = false;
-    o.SaveToken = false ;
+    o.SaveToken = false;
 
     o.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
         ValidateIssuer = true,
-        ValidateAudience  = true , 
-        ValidateLifetime = true ,
+        ValidateAudience = true,
+        ValidateLifetime = true,
         ValidIssuer = builder.Configuration["JWT:Issuer"],
         ValidAudience = builder.Configuration["JWT:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.key))
@@ -99,6 +113,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);  
 
 app.UseAuthentication();
 
