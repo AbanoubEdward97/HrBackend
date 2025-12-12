@@ -1,53 +1,43 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using HrApi.Models;
+using HrBackend.Dtos.Auth;
 
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly IConfiguration _config;
-    public AuthController(UserManager<ApplicationUser> userManager, IConfiguration config)
+
+    private readonly JWTService _jWTService;
+    public AuthController(UserManager<ApplicationUser> userManager, IConfiguration config, JWTService jWTService)
     {
         _userManager = userManager;
-        _config = config;
+        _jWTService = jWTService;
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Register(RegisterDto dto)
-    {
-        var user = new ApplicationUser
-        {
-            UserName = dto.Email,
-            Email = dto.Email
-        };
-        var result = await _userManager.CreateAsync(user, dto.password);
-        if (!result.succeeded)
-        {
-            return BadRequest(result.errors);
-        }
-        return Ok("User Registered successfully");
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Login(LoginDto dto)
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         var user = await _userManager.FindByEmailAsync(dto.Email);
-        if (user == null || !await _userManager.CheckPasswordAsync(user, dto.password))
+        if (user == null)
         {
-            return Unauthorized();
+            return Unauthorized("Invalid Email or Password");
+
+        }
+        var validPassword = await _userManager.CheckPasswordAsync(user, dto.Password);
+        if (!validPassword)
+        {
+            return Unauthorized("Invalid Email or Password");
         }
 
-        //Generate JWT
-        var claims = new List<System.Security.Claims.Claim>
+        //create the token
+        var token = await _jWTService.GenerateToken(user);
+        return Ok(new LoginResponseDto
         {
-            // new(JwtRegisteredClaimNames.Sub,user.email.ToString()),
-            //new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        };
+            Token = token,
+            ExpiresAt = DateTime.UtcNow.AddDays(double.Parse("7"))
+        });
     }
 }
+
