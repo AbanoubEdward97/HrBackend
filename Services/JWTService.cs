@@ -10,14 +10,14 @@ using Microsoft.IdentityModel.Tokens;
 public class JWTService
 {
     private readonly JWT _jwt;
-    private readonly UserManager<ApplicationUser> _userManager;
-    public JWTService(IOptions<JWT> jwt, UserManager<ApplicationUser> userManager)
+    private readonly UserManager<IdentityUser> _userManager;
+    public JWTService(IOptions<JWT> jwt, UserManager<IdentityUser> userManager)
     {
         _jwt = jwt.Value;
         _userManager = userManager;
     }
 
-    public async Task<string> GenerateToken(ApplicationUser user)
+    public async Task<string> GenerateToken(IdentityUser user)
     {
         var userClaims = await _userManager.GetClaimsAsync(user);
         var userRoles = await _userManager.GetRolesAsync(user);
@@ -28,8 +28,6 @@ public class JWTService
         {
              new Claim(JwtRegisteredClaimNames.Sub, user.Id),
             new Claim(JwtRegisteredClaimNames.Email, user.Email!),
-            new Claim("firstName", user.FirstName),
-            new Claim("lastName", user.LastName)
         }.Union(userClaims).Union(roleClaims);
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.key));

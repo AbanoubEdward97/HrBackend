@@ -5,6 +5,7 @@ public class AddEmpDTO
     //[StringLength(100, MinimumLength = 2)]
     //[RegularExpression(@"^[A-Za-z]+(?: [A-Za-z]+)*$", ErrorMessage = "Name can only contain letters and a single space")]
     public string Name { get; set; } = "";
+    public string Address { get; set; } = "";
     [Required]
     public DateOnly BirthDate { get; set; }
     [Required]
@@ -29,7 +30,7 @@ public class AddEmpDTO
     [Range(0, 1000000)]
     public decimal Salary { get; set; }
     [Required]
-    public DateTime AttendDate { get; set; }
+    public TimeOnly AttendDate { get; set; }
     [Required]
-    public DateTime LeaveDate { get; set; }
+    public TimeOnly LeaveDate { get; set; }
 }

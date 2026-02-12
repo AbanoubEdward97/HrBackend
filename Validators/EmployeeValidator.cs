@@ -23,18 +23,16 @@ public class EmployeeValidator : AbstractValidator<AddEmpDTO>
         .Matches(@"^0(10|11|12|15)\d{8}$")
         .WithMessage("Invalid phone number");
 
-        RuleFor(x=> x.AttendDate)
-        .NotEmpty()
-        .WithMessage("Attend Date is Required")
-        .LessThanOrEqualTo(DateTime.Today)
-        .WithMessage("Attend Date cannot be in the future");
+        RuleFor(x => x.AttendDate)
+       .NotEmpty()
+       .WithMessage("Attend Date is Required")
+       .LessThan(x => x.LeaveDate)
+       .WithMessage("Attend Date must be less than Leave Date");
 
-        RuleFor(x=>x.LeaveDate)
+        RuleFor(x => x.LeaveDate)
         .NotEmpty()
         .WithMessage("Leave Date is Required")
-        .LessThanOrEqualTo(DateTime.Today)
-        .WithMessage("Leave Date cannot be in the future")
-        .GreaterThan(x=>x.AttendDate)
+        .GreaterThan(x => x.AttendDate)
         .WithMessage("Leave Date must be greater than Attend Date");
     }
 

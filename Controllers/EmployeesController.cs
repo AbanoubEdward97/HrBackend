@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HrApi.Models;
@@ -16,7 +11,7 @@ namespace HrBackend.Controllers
     {
         private readonly HrContext _context;
         private readonly IMapper _mapper;
-        public EmployeesController(HrContext context , IMapper mapper)
+        public EmployeesController(HrContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -30,8 +25,8 @@ namespace HrBackend.Controllers
         }
 
         // GET: api/Employees/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee([FromRoute] long id)
+        [HttpGet("{id:long}")]
+        public async Task<ActionResult<Employee>> GetEmployee(long id)
         {
             var employee = await _context.Employees.FindAsync(id);
 
@@ -44,15 +39,17 @@ namespace HrBackend.Controllers
         }
 
         // PUT: api/Employees/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee(long id, Employee employee)
+        [HttpPut]
+        public async Task<IActionResult> EditEmployee(long Id, Employee employee)
         {
-            if (id != employee.Id)
+            if (Id != employee.Id)
             {
                 return BadRequest();
             }
-
+            if (employee == null)
+            {
+                return BadRequest();
+            }
             _context.Entry(employee).State = EntityState.Modified;
 
             try
@@ -61,7 +58,7 @@ namespace HrBackend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(id))
+                if (!EmployeeExists(Id))
                 {
                     return NotFound();
                 }
@@ -77,7 +74,7 @@ namespace HrBackend.Controllers
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee([FromBody]AddEmpDTO newEmp)
+        public async Task<ActionResult<Employee>> PostEmployee([FromBody] AddEmpDTO newEmp)
         {
             if (!ModelState.IsValid)
             {
@@ -92,7 +89,7 @@ namespace HrBackend.Controllers
         }
 
         // DELETE: api/Employees/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:long}")]
         public async Task<IActionResult> DeleteEmployee(long id)
         {
             var employee = await _context.Employees.FindAsync(id);

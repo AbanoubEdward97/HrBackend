@@ -7,10 +7,10 @@ using HrBackend.Dtos.Auth;
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly UserManager<IdentityUser> _userManager;
 
     private readonly JWTService _jWTService;
-    public AuthController(UserManager<ApplicationUser> userManager, IConfiguration config, JWTService jWTService)
+    public AuthController(UserManager<IdentityUser> userManager, IConfiguration config, JWTService jWTService)
     {
         _userManager = userManager;
         _jWTService = jWTService;

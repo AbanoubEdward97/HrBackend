@@ -6196,16 +6196,16 @@
         "Templates/BlazorIdentity/Shared/StatusMessage.tt",
         "Templates/ControllerGenerator/ApiControllerWithContext.cshtml",
         "Templates/ControllerGenerator/MvcControllerWithContext.cshtml",
-        "Templates/General/IdentityApplicationUser.Interfaces.cs",
-        "Templates/General/IdentityApplicationUser.cs",
-        "Templates/General/IdentityApplicationUser.tt",
-        "Templates/General/IdentityApplicationUserModel.cs",
         "Templates/General/IdentityDbContext.Interfaces.cs",
         "Templates/General/IdentityDbContext.cs",
         "Templates/General/IdentityDbContext.tt",
         "Templates/General/IdentityDbContextModel.cs",
+        "Templates/General/IdentityIdentityUser.Interfaces.cs",
+        "Templates/General/IdentityIdentityUser.cs",
+        "Templates/General/IdentityIdentityUser.tt",
+        "Templates/General/IdentityIdentityUserModel.cs",
         "Templates/Identity/Data/ApplicationDbContext.cshtml",
-        "Templates/Identity/Data/ApplicationUser.cshtml",
+        "Templates/Identity/Data/IdentityUser.cshtml",
         "Templates/Identity/IdentityHostingStartup.cshtml",
         "Templates/Identity/Pages/Account/Account.AccessDenied.cs.cshtml",
         "Templates/Identity/Pages/Account/Account.AccessDenied.cshtml",
@@ -6352,7 +6352,7 @@
         "Templates/Identity/wwwroot/lib/jquery/dist/jquery.slim.min.js",
         "Templates/Identity/wwwroot/lib/jquery/dist/jquery.slim.min.map",
         "Templates/Identity_Versioned/Bootstrap4/Data/ApplicationDbContext.cshtml",
-        "Templates/Identity_Versioned/Bootstrap4/Data/ApplicationUser.cshtml",
+        "Templates/Identity_Versioned/Bootstrap4/Data/IdentityUser.cshtml",
         "Templates/Identity_Versioned/Bootstrap4/IdentityHostingStartup.cshtml",
         "Templates/Identity_Versioned/Bootstrap4/Pages/Account/Account.AccessDenied.cs.cshtml",
         "Templates/Identity_Versioned/Bootstrap4/Pages/Account/Account.AccessDenied.cshtml",
@@ -7494,24 +7494,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {}
+    "C:\\Users\\abano\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\HrBackend\\HrBackend.csproj",
+      "projectUniqueName": "D:\\HrBackend\\HrBackend.csproj",
       "projectName": "HrBackend",
-      "projectPath": "C:\\Users\\PC\\Desktop\\HrBackend\\HrBackend.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\HrBackend\\obj\\",
+      "projectPath": "D:\\HrBackend\\HrBackend.csproj",
+      "packagesPath": "C:\\Users\\abano\\.nuget\\packages\\",
+      "outputPath": "D:\\HrBackend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\abano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7608,7 +7615,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

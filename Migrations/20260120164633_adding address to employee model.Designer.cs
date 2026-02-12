@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HrBackend.Migrations
 {
     [DbContext(typeof(HrContext))]
-    [Migration("20251129135219_addingIdentity")]
-    partial class addingIdentity
+    [Migration("20260120164633_adding address to employee model")]
+    partial class addingaddresstoemployeemodel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,27 @@ namespace HrBackend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ChatMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ChatMessages");
+                });
+
             modelBuilder.Entity("HrApi.Models.Employee", b =>
                 {
                     b.Property<long>("Id")
@@ -32,6 +53,10 @@ namespace HrBackend.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("AttendDate")
                         .HasColumnType("datetime2");
@@ -272,6 +297,108 @@ namespace HrBackend.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PermissionGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PermissionGroups");
+                });
+
+            modelBuilder.Entity("PermissionGroupPermission", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GroupId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("PermissionGroupPermissions");
+                });
+
+            modelBuilder.Entity("Permissions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Screen")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Action = "View",
+                            Key = "Employees.View",
+                            Screen = "Employees"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Action = "Add",
+                            Key = "Employees.Add",
+                            Screen = "Employees"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Action = "Edit",
+                            Key = "Employees.Edit",
+                            Screen = "Employees"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Action = "Delete",
+                            Key = "Employees.Delete",
+                            Screen = "Employees"
+                        });
+                });
+
+            modelBuilder.Entity("UserPermissionGroup", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "GroupId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("UserPermissionGroups");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -321,6 +448,56 @@ namespace HrBackend.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("PermissionGroupPermission", b =>
+                {
+                    b.HasOne("PermissionGroup", "Group")
+                        .WithMany("PermissionGroupPermissions")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Permissions", "Permission")
+                        .WithMany("PermissionGroupPermissions")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("Permission");
+                });
+
+            modelBuilder.Entity("UserPermissionGroup", b =>
+                {
+                    b.HasOne("PermissionGroup", "Group")
+                        .WithMany("UserPermissionGroups")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PermissionGroup", b =>
+                {
+                    b.Navigation("PermissionGroupPermissions");
+
+                    b.Navigation("UserPermissionGroups");
+                });
+
+            modelBuilder.Entity("Permissions", b =>
+                {
+                    b.Navigation("PermissionGroupPermissions");
                 });
 #pragma warning restore 612, 618
         }
