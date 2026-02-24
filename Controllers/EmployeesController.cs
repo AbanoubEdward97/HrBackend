@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HrApi.Models;
 using AutoMapper;
-
+using Microsoft.AspNetCore.Authorization;
 namespace HrBackend.Controllers
 {
     [Route("api/[controller]")]
@@ -18,6 +18,8 @@ namespace HrBackend.Controllers
         }
 
         // GET: api/Employees
+        [Authorize(Enums.Permissions.Employees.View)]
+        //[Authorize(Roles = "Admin,SuperAdmin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {

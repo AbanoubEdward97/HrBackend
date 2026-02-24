@@ -1,4 +1,5 @@
 using HrBackend.Data.seed;
+using HrBackend.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,13 @@ public class HrContext : IdentityDbContext<IdentityUser>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
+        modelBuilder.Entity<Department>()
+            .HasIndex(d => d.Name)
+            .IsUnique();
+            ;
+        modelBuilder.Entity<Employee>()
+            .Property(e => e.Salary)
+            .HasPrecision(18, 2);
         // PermissionGroupPermission (join table)
         modelBuilder.Entity<PermissionGroupPermission>()
             .HasKey(p => new { p.GroupId, p.PermissionId });
@@ -42,8 +49,45 @@ public class HrContext : IdentityDbContext<IdentityUser>
             .HasOne(upg => upg.Group)
             .WithMany(g => g.UserPermissionGroups)
             .HasForeignKey(upg => upg.GroupId);
+
+        modelBuilder.Entity<GeneralSettings>()
+            .HasData(
+                new GeneralSettings()
+                {
+                    Id = 1,
+                    OvertimeCalculationMethod = CalculationMethod.Multiplier,
+                    OvertimeValue = 2,
+                    DeductionCalculationMethod = CalculationMethod.FixedAmount,
+                    DeductionValue = 30,
+                    WeeklyOfDay1 = DayOfWeek.Friday,
+                    WeeklyOfDay2 = DayOfWeek.Saturday,
+                    LastUpdated = new DateTime(2026, 02, 21, 0, 0, 0, DateTimeKind.Utc)
+                }
+            );
+        modelBuilder.Entity<GeneralSettings>(entity =>
+        {
+            entity.Property(x => x.DeductionValue).HasPrecision(18, 2);
+            entity.Property(x => x.OvertimeValue).HasPrecision(18, 2);
+        });
+        modelBuilder.Entity<OfficialHoliday>()
+            .HasIndex(x => x.Date)
+            .IsUnique();
+
+        modelBuilder.Entity<AttendanceRecord>()
+            .HasIndex(a => new { a.EmployeeId, a.WorkDate })
+            .IsUnique();
+
+        modelBuilder
+            .Entity<AttendanceRecord>()
+            .HasOne(a => a.Employee)
+            .WithMany()
+            .HasForeignKey(a => a.EmployeeId)
+            .OnDelete(DeleteBehavior.Cascade);
+            ;
+
+
         // Seed initial data
-        PermissionSeeder.Seed(modelBuilder);
+        //PermissionSeeder.Seed(modelBuilder);
     }
 
 
@@ -53,4 +97,9 @@ public class HrContext : IdentityDbContext<IdentityUser>
     public DbSet<PermissionGroupPermission> PermissionGroupPermissions { get; set; }
     public DbSet<UserPermissionGroup> UserPermissionGroups { get; set; }
     public DbSet<ChatMessage> ChatMessages { get; set; }
+    public DbSet<Department> Departments { get; set; }
+
+    public DbSet<GeneralSettings> GeneralSettings { get; set; }
+    public DbSet<OfficialHoliday> OfficialHolidays { get; set; }
+    public DbSet<AttendanceRecord> AttendanceRecords { get; set; }
 }

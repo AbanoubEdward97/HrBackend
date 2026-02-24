@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using HrBackend.Hubs;
-using HrBackend.Data.seed;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.OpenApi;
 //seed Super Admin 
 // async Task SeedSuperAdminAsync(WebApplication app)
 // {
@@ -61,9 +62,16 @@ builder.Services.AddCors(options =>
 builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 // Add services to the container.
 builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+builder.Services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<HrContext>();
 //builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<JWTService>();
+builder.Services.Configure<SecurityStampValidatorOptions>(options =>
+{
+    options.ValidationInterval = TimeSpan.Zero; // Validate on every request
+});
+
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
 builder.Services.AddValidatorsFromAssemblyContaining<EmployeeValidator>();
@@ -74,20 +82,20 @@ builder.Services.AddAutoMapper(cfg =>
     cfg.AddProfile<EmployeeProfile>();  // add as many profiles as you have
 });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
 builder.Services.AddDbContext<HrContext>(opt =>
 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(o =>
 {
     var jwtSettings = builder.Configuration.GetSection("JWT").Get<JWT>();
     o.RequireHttpsMetadata = false;
     o.SaveToken = false;
-
+    Console.WriteLine("VAL KEY: " + jwtSettings?.key);
     o.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
@@ -97,7 +105,54 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = builder.Configuration["JWT:Issuer"],
         ValidAudience = builder.Configuration["JWT:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings?.key!))
+
     };
+});
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc
+    (
+        "v1", new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "HR Api",
+            Description = "Human resource Management System",
+            Contact = new OpenApiContact
+            {
+                Name = "Abanoub Edward",
+                Email = "abanoub.edward97101@gmail.com"
+
+            }
+        }
+
+    );
+    //options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    //{
+    //    Name = "Authorization",
+    //    Type = SecuritySchemeType.ApiKey,
+    //    Scheme = "Bearer",
+    //    BearerFormat = "JWT",
+    //    In = ParameterLocation.Header,
+    //    Description = "Enter JWT key here :",
+
+    
+    //});
+    //options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    //{
+    //    {
+    //         new OpenApiSecurityScheme
+    //        {
+    //            Reference = new OpenApiReference
+    //            {
+    //                Type = ReferenceType.SecurityScheme,
+    //                Id = "Bearer"
+    //            },
+    //            Name = "Bearer",
+    //            In = ParameterLocation.Header
+    //        },
+    //        new List<string>()
+    //    }
+    //});
 });
 var app = builder.Build();
 //await SeedSuperAdminAsync(app);
@@ -119,21 +174,19 @@ try
 }
 catch (Exception ex)
 {
-    
-    logger.LogError(ex , "An error occurred while seeding data.");
+
+    logger.LogError(ex, "An error occurred while seeding data.");
 }
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUi(options =>
-{
-    options.DocumentPath = "/openapi/v1.json";
-});
+    app.UseSwagger();
+    app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "HR API v1"); });
+    //app.UseSwaggerUI();
 }
 app.MapHub<ChatHub>("/chat");
 app.UseHttpsRedirection();
 
-app.UseCors(MyAllowSpecificOrigins);  
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 

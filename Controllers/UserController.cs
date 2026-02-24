@@ -46,17 +46,17 @@ public class UserController : ControllerBase
         var users = await _context.Users
         .AsNoTracking()
         .Select(u => new
-     {
-         u.Id,
-         u.UserName,
-         u.Email,
-         Roles = (
+        {
+            u.Id,
+            u.UserName,
+            u.Email,
+            Roles = (
              from ur in _context.UserRoles
              join r in _context.Roles on ur.RoleId equals r.Id
              where ur.UserId == u.Id
              select r.Name
          ).ToList()
-     })
+        })
      .ToListAsync();
 
         return Ok(users);
@@ -65,10 +65,10 @@ public class UserController : ControllerBase
         ////////////////////////////////////////////////////
         // [course code]var roles = await _userManager.Users.Select(u => new UserDto { Id = u.Id, UserName = u.UserName, Email = u.Email, Roles = _userManager.GetRolesAsync(u).Result }).AsNoTracking().ToListAsync();
     }
-    [HttpGet]
-    public async Task<IActionResult> ManageRoles(string userId)
+    [HttpGet("getRoles/{userId:guid}")]
+    public async Task<IActionResult> ManageRoles(Guid userId)
     {
-        var user = await _userManager.FindByIdAsync(userId);
+        var user = await _userManager.FindByIdAsync(userId.ToString());
         if (user == null)
         {
             return NotFound("User not found.");
@@ -79,15 +79,32 @@ public class UserController : ControllerBase
         {
             UserId = user.Id,
             UserName = user.UserName,
-            Roles = allRoles.Select(role => new RoleDTO
+            Roles = allRoles.Select(role => new CheckBoxDTO
             {
-                RoleName = role.Name,
+                DisplayValue = role.Name,
                 IsSelected = _userManager.IsInRoleAsync(user, role.Name).Result
             }).ToList()
         };
 
         return Ok(dto);
     }
+
+    [HttpPost("updateRoles")]
+    public async Task<IActionResult> UpdateRoles(UserRolesDTO dto)
+    {
+        var user = await _userManager.FindByIdAsync(dto.UserId);
+        if (user == null)
+        {
+            return NotFound("User not found.");
+        }
+
+        var currentRoles = await _userManager.GetRolesAsync(user);
+        await _userManager.RemoveFromRolesAsync(user, currentRoles);
+        await _userManager.AddToRolesAsync(user, dto.Roles.Where(r => r.IsSelected).Select(r => r.DisplayValue));
+
+        return Ok(new { dto, Message = "User roles updated successfully." });
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreateUser(CreateUserDto dto)
     {
@@ -151,4 +168,9 @@ public class UserController : ControllerBase
 
 
 }
+
+
+
+
+
 

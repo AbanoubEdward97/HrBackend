@@ -10,7 +10,7 @@ public class AddEmpDTO
     public DateOnly BirthDate { get; set; }
     [Required]
     [Phone]
-    [StringLength(20)]
+    [StringLength(11)]
     public string PhoneNumber { get; set; } = "";
     [Required]
     [RegularExpression("^(Male|Female)$", ErrorMessage = "Invalid Gender")]
@@ -33,4 +33,7 @@ public class AddEmpDTO
     public TimeOnly AttendDate { get; set; }
     [Required]
     public TimeOnly LeaveDate { get; set; }
+    [Required]
+    public int DepartmentId { get; set; } // Foreign Key
+
 }

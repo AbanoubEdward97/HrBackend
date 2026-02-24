@@ -70,7 +70,7 @@ public static class DefaultUsers
  
         foreach (var permission in allPermissions)
         {
-            if (!roleClaims.Any(rc => rc.Type == "Permission" && rc.Value == permission))
+            if (!roleClaims.Any(rc => rc.Type == "Permission" && rc.Value == permission  ))
             {
                 await roleManager.AddClaimAsync(role,new Claim("Permission", permission));
             }
