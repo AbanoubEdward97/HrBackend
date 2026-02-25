@@ -2,6 +2,7 @@
 using HrBackend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Configuration;
 
@@ -19,12 +20,23 @@ public class AttendanceController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> getAll([FromQuery] AttendanceQueryDTO query)
     {
+        var settings = await _context.GeneralSettings.AsNoTracking().FirstOrDefaultAsync(x=>x.Id ==1);
+        if (settings == null)
+        {
+            return StatusCode(500 , "General settings are not configured");
+        }
+        var records = _context.AttendanceRecords.Include(e => e.Employee).AsQueryable();
+        if (!query.IncludeOffDays)
+        {
+            records = records.Where(r => r.WorkDate.DayOfWeek != settings.WeeklyOfDay1 && 
+            (!settings.WeeklyOfDay2.HasValue || r.WorkDate.DayOfWeek != settings.WeeklyOfDay2.Value)
+            );
+        }
         if (query.From.HasValue && query.To.HasValue && query.From > query.To)
         {
             return BadRequest("From Date cannot be greater than To date");
         }
         ;
-        var records = _context.AttendanceRecords.Include(e => e.Employee).AsQueryable();
         if (!String.IsNullOrEmpty(query.EmployeeName))
         {
             records = records.Where(r => r.Employee.Name.Contains(query.EmployeeName));
