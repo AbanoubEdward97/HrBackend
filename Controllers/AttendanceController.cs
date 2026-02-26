@@ -116,8 +116,10 @@ public class AttendanceController : ControllerBase
     }
 
     [HttpPost("import")]
-    public async Task<IActionResult> ImportExcell([FromForm] IFormFile file)
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> ImportExcell(ImportExcellDTO dto)
     {
+        var file = dto.file;
         if (file == null || file.Length == 0) {
             return BadRequest("Please Upload a valid excell file");
         }
