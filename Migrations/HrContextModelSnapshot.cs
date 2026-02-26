@@ -135,8 +135,8 @@ namespace HrBackend.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateOnly>("WorkDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("WorkDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
