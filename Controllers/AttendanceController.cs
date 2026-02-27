@@ -251,7 +251,7 @@ public class AttendanceController : ControllerBase
                 CheckIn = ReadOptionalDateTime(row.Cell(colCheckIn), workDate);
 
             if (colCheckOut != -1)
-                CheckIn = ReadOptionalDateTime(row.Cell(colCheckOut), workDate);
+                CheckOut = ReadOptionalDateTime(row.Cell(colCheckOut), workDate);
 
             if (CheckIn.HasValue && CheckOut.HasValue && CheckOut.Value < CheckIn.Value)
                 throw new Exception("CheckOut must be after CheckIn.");

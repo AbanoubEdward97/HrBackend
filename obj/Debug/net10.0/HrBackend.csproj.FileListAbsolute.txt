@@ -679,3 +679,11 @@ D:\HrBackend\bin\Debug\net10.0\ExcelNumberFormat.dll
 D:\HrBackend\bin\Debug\net10.0\RBush.dll
 D:\HrBackend\bin\Debug\net10.0\SixLabors.Fonts.dll
 D:\HrBackend\bin\Debug\net10.0\System.IO.Packaging.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\ClosedXML.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\ClosedXML.Parser.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\ExcelNumberFormat.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\RBush.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\SixLabors.Fonts.dll
+C:\Users\PC\HrBackend\bin\Debug\net10.0\System.IO.Packaging.dll

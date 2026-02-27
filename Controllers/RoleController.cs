@@ -28,7 +28,7 @@ public class RoleController : ControllerBase
         var role = new IdentityRole
         {
             Name = name
-        };
+        };;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
         var result = await _roleManager.CreateAsync(role);
         if (!result.Succeeded)
