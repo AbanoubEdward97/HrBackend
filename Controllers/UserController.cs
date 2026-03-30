@@ -1,4 +1,5 @@
 using HrApi.Models;
+using HrBackend.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,15 +8,15 @@ using Microsoft.EntityFrameworkCore;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly HrContext _context;
     private readonly UserManager<IdentityUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly IUserService _userService;
 
-    public UserController(HrContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+    public UserController(HrContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IUserService userService)
     {
-        _context = context;
         _userManager = userManager;
         _roleManager = roleManager;
+        _userService = userService;
     }
 
 
@@ -43,22 +44,22 @@ public class UserController : ControllerBase
         // return Ok(result);
         ///////////////////End First Solution////////////////////////////////
         ///second solution////////////////////////////////// 
-        var users = await _context.Users
-        .AsNoTracking()
-        .Select(u => new
-        {
-            u.Id,
-            u.UserName,
-            u.Email,
-            Roles = (
-             from ur in _context.UserRoles
-             join r in _context.Roles on ur.RoleId equals r.Id
-             where ur.UserId == u.Id
-             select r.Name
-         ).ToList()
-        })
-     .ToListAsync();
-
+     //   var users = await _context.Users
+     //   .AsNoTracking()
+     //   .Select(u => new
+     //   {
+     //       u.Id,
+     //       u.UserName,
+     //       u.Email,
+     //       Roles = (
+     //        from ur in _context.UserRoles
+     //        join r in _context.Roles on ur.RoleId equals r.Id
+     //        where ur.UserId == u.Id
+     //        select r.Name
+     //    ).ToList()
+     //   })
+     //.ToListAsync();
+        var users = await _userService.GetAllUsers();
         return Ok(users);
 
         /// End second solution/////////////////////////////
@@ -142,28 +143,31 @@ public class UserController : ControllerBase
                 return BadRequest("The specified role does not exist.");
             }
             await _userManager.AddToRoleAsync(user, dto.Role);
+        }else
+        {
+            return BadRequest("Please Select Role for this user");
         }
 
-        //Assign Permission Groups
-        if (dto.PermissionGroupIds != null && dto.PermissionGroupIds.Any())
-        {
-            foreach (var groupId in dto.PermissionGroupIds)
-            {
-                var group = await _context.PermissionGroups.FindAsync(groupId);
-                if (group != null)
-                {
-                    // Logic to assign permissions from the group to the user
-                    // This part depends on how you manage user permissions in your system
-                    _context.UserPermissionGroups.Add(new UserPermissionGroup
-                    {
-                        UserId = user.Id,
-                        GroupId = groupId
-                    });
-                }
-            }
-        }
-        await _context.SaveChangesAsync();
-        return Ok(new { user.Id, user.Email });
+        ////Assign Permission Groups
+        //if (dto.PermissionGroupIds != null && dto.PermissionGroupIds.Any())
+        //{
+        //    foreach (var groupId in dto.PermissionGroupIds)
+        //    {
+        //        var group = await _context.PermissionGroups.FindAsync(groupId);
+        //        if (group != null)
+        //        {
+        //            // Logic to assign permissions from the group to the user
+        //            // This part depends on how you manage user permissions in your system
+        //            _context.UserPermissionGroups.Add(new UserPermissionGroup
+        //            {
+        //                UserId = user.Id,
+        //                GroupId = groupId
+        //            });
+        //        }
+        //    }
+        //}
+        await _userService.SaveChanges();
+        return Ok(user);
     }
 
 

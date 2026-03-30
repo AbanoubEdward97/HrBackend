@@ -1,5 +1,7 @@
 ﻿namespace HrBackend.Models;
 using HrApi.Models;
+using System.Text.Json.Serialization;
+
 public class Department
 {
     public int DepartmentId { get; set; }

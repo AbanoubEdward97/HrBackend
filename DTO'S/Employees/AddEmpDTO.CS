@@ -35,5 +35,4 @@ public class AddEmpDTO
     public TimeOnly LeaveDate { get; set; }
     [Required]
     public int DepartmentId { get; set; } // Foreign Key
-
 }

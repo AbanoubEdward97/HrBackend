@@ -55,8 +55,8 @@ namespace HrBackend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<TimeOnly>("AttendDate")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("AttendDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
@@ -76,8 +76,8 @@ namespace HrBackend.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<TimeOnly>("LeaveDate")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("LeaveDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -3,52 +3,88 @@
   "WorkspaceRootPath": "D:\\HrBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\attendance\\importexcelldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\attendance\\importexcelldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\addempdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\addempdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\attendance\\attendanceimportresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\attendance\\attendanceimportresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\models\\userpermissiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:models\\userpermissiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\models\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:models\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\validators\\attendancequeryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:validators\\attendancequeryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\attendance\\attendanceupsertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\attendance\\attendanceupsertdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\validators\\attendanceupsertvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:validators\\attendanceupsertvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\attendance\\attendancequerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\attendance\\attendancequerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\users\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\users\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\attendance\\attendanceimportrowerrordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\attendance\\attendanceimportrowerrordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\salaryreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\salaryreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\enums\\attendancesource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:enums\\attendancesource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\data\\hrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:data\\hrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\controllers\\salaryreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:controllers\\salaryreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\migrations\\20260226202547_modifying type of workday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:migrations\\20260226202547_modifying type of workday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\isalaryreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\isalaryreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\generallsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\generallsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\dto\u0027s\\salaryreport\\salaryreportquerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:dto\u0027s\\salaryreport\\salaryreportquerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\validators\\salaryreportqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:validators\\salaryreportqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\validators\\employeevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:validators\\employeevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\services\\officialholidaysservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:services\\officialholidaysservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,160 +105,263 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AttendanceQueryValidator.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Validators\\AttendanceQueryValidator.cs",
+              "RelativeDocumentMoniker": "Validators\\AttendanceQueryValidator.cs",
+              "ToolTip": "D:\\HrBackend\\Validators\\AttendanceQueryValidator.cs",
+              "RelativeToolTip": "Validators\\AttendanceQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T17:22:47.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\HrBackend\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "Controllers\\UserController.cs*",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAtwKgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T19:22:44.692Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ImportExcellDTO.cs",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Attendance\\ImportExcellDTO.cs",
-              "RelativeDocumentMoniker": "DTO\u0027S\\Attendance\\ImportExcellDTO.cs",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Attendance\\ImportExcellDTO.cs",
-              "RelativeToolTip": "DTO\u0027S\\Attendance\\ImportExcellDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T23:25:36.48Z",
+              "WhenOpened": "2026-03-18T10:52:48.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddEmpDTO.CS",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\AddEmpDTO.CS",
-              "RelativeDocumentMoniker": "DTO\u0027S\\AddEmpDTO.CS",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\AddEmpDTO.CS",
-              "RelativeToolTip": "DTO\u0027S\\AddEmpDTO.CS",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\IUserService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\IUserService.cs",
+              "RelativeToolTip": "Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T00:07:32.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AttendanceController.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Controllers\\AttendanceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AttendanceController.cs",
-              "ToolTip": "D:\\HrBackend\\Controllers\\AttendanceController.cs*",
-              "RelativeToolTip": "Controllers\\AttendanceController.cs*",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAmwIcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T23:49:04.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AttendanceImportResultDto.cs",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceImportResultDto.cs",
-              "RelativeDocumentMoniker": "DTO\u0027S\\Attendance\\AttendanceImportResultDto.cs",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceImportResultDto.cs",
-              "RelativeToolTip": "DTO\u0027S\\Attendance\\AttendanceImportResultDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T23:42:46.297Z",
+              "WhenOpened": "2026-03-18T10:52:58.797Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AttendanceQueryDTO.cs",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceQueryDTO.cs",
-              "RelativeDocumentMoniker": "DTO\u0027S\\Attendance\\AttendanceQueryDTO.cs",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceQueryDTO.cs",
-              "RelativeToolTip": "DTO\u0027S\\Attendance\\AttendanceQueryDTO.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAcAAAATAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\HrBackend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T20:23:57.705Z"
+              "WhenOpened": "2026-03-18T11:23:25.147Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20260226202547_modifying type of workday.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Migrations\\20260226202547_modifying type of workday.cs",
-              "RelativeDocumentMoniker": "Migrations\\20260226202547_modifying type of workday.cs",
-              "ToolTip": "D:\\HrBackend\\Migrations\\20260226202547_modifying type of workday.cs",
-              "RelativeToolTip": "Migrations\\20260226202547_modifying type of workday.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "UserPermissionGroup.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Models\\UserPermissionGroup.cs",
+              "RelativeDocumentMoniker": "Models\\UserPermissionGroup.cs",
+              "ToolTip": "D:\\HrBackend\\Models\\UserPermissionGroup.cs",
+              "RelativeToolTip": "Models\\UserPermissionGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T20:25:47.379Z"
+              "WhenOpened": "2026-03-22T17:23:03.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "Models\\Department.cs",
+              "ToolTip": "D:\\HrBackend\\Models\\Department.cs",
+              "RelativeToolTip": "Models\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T12:00:20.08Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "DefaultUsers.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
+              "RelativeDocumentMoniker": "Data\\seed\\DefaultUsers.cs",
+              "ToolTip": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
+              "RelativeToolTip": "Data\\seed\\DefaultUsers.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwB0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T19:37:59.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AttendanceUpsertValidator.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Validators\\AttendanceUpsertValidator.cs",
+              "RelativeDocumentMoniker": "Validators\\AttendanceUpsertValidator.cs",
+              "ToolTip": "D:\\HrBackend\\Validators\\AttendanceUpsertValidator.cs",
+              "RelativeToolTip": "Validators\\AttendanceUpsertValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T12:02:09.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Users\\UserDto.cs",
+              "RelativeDocumentMoniker": "DTO\u0027S\\Users\\UserDto.cs",
+              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Users\\UserDto.cs",
+              "RelativeToolTip": "DTO\u0027S\\Users\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T10:55:08.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateUserDto.cs",
+              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Users\\CreateUserDto.cs",
+              "RelativeDocumentMoniker": "DTO\u0027S\\Users\\CreateUserDto.cs",
+              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Users\\CreateUserDto.cs",
+              "RelativeToolTip": "DTO\u0027S\\Users\\CreateUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:58:54.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Employee.cs",
               "DocumentMoniker": "D:\\HrBackend\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "Models\\Employee.cs",
               "ToolTip": "D:\\HrBackend\\Models\\Employee.cs",
               "RelativeToolTip": "Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T00:07:14.37Z"
+              "WhenOpened": "2026-03-18T12:00:14.006Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AttendanceUpsertDTO.cs",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceUpsertDTO.cs",
-              "RelativeDocumentMoniker": "DTO\u0027S\\Attendance\\AttendanceUpsertDTO.cs",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceUpsertDTO.cs",
-              "RelativeToolTip": "DTO\u0027S\\Attendance\\AttendanceUpsertDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "SalaryReportService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\SalaryReportService.cs",
+              "RelativeDocumentMoniker": "Services\\SalaryReportService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\SalaryReportService.cs",
+              "RelativeToolTip": "Services\\SalaryReportService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T18:04:46.543Z"
+              "WhenOpened": "2026-03-17T18:56:59.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AttendanceRecord.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Models\\AttendanceRecord.cs",
-              "RelativeDocumentMoniker": "Models\\AttendanceRecord.cs",
-              "ToolTip": "D:\\HrBackend\\Models\\AttendanceRecord.cs",
-              "RelativeToolTip": "Models\\AttendanceRecord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "ISalaryReportService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\ISalaryReportService.cs",
+              "RelativeDocumentMoniker": "Services\\ISalaryReportService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\ISalaryReportService.cs",
+              "RelativeToolTip": "Services\\ISalaryReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T18:05:17.242Z"
+              "WhenOpened": "2026-03-17T18:57:41.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AttendanceImportRowErrorDTO.cs",
-              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceImportRowErrorDTO.cs",
-              "RelativeDocumentMoniker": "DTO\u0027S\\Attendance\\AttendanceImportRowErrorDTO.cs",
-              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\Attendance\\AttendanceImportRowErrorDTO.cs",
-              "RelativeToolTip": "DTO\u0027S\\Attendance\\AttendanceImportRowErrorDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "SalaryReportController.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Controllers\\SalaryReportController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SalaryReportController.cs",
+              "ToolTip": "D:\\HrBackend\\Controllers\\SalaryReportController.cs",
+              "RelativeToolTip": "Controllers\\SalaryReportController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T23:45:26.967Z"
+              "WhenOpened": "2026-03-17T11:54:58.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HrContext.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Data\\HrContext.cs",
-              "RelativeDocumentMoniker": "Data\\HrContext.cs",
-              "ToolTip": "D:\\HrBackend\\Data\\HrContext.cs",
-              "RelativeToolTip": "Data\\HrContext.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "GenerallSettingsService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\GenerallSettingsService.cs",
+              "RelativeDocumentMoniker": "Services\\GenerallSettingsService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\GenerallSettingsService.cs",
+              "RelativeToolTip": "Services\\GenerallSettingsService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T23:41:49.056Z"
+              "WhenOpened": "2026-03-17T19:02:20.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AttendanceSource.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Enums\\AttendanceSource.cs",
-              "RelativeDocumentMoniker": "Enums\\AttendanceSource.cs",
-              "ToolTip": "D:\\HrBackend\\Enums\\AttendanceSource.cs",
-              "RelativeToolTip": "Enums\\AttendanceSource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "SalaryReportQueryValidator.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Validators\\SalaryReportQueryValidator.cs",
+              "RelativeDocumentMoniker": "Validators\\SalaryReportQueryValidator.cs",
+              "ToolTip": "D:\\HrBackend\\Validators\\SalaryReportQueryValidator.cs",
+              "RelativeToolTip": "Validators\\SalaryReportQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T23:41:35.317Z"
+              "WhenOpened": "2026-03-17T12:01:32.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmployeeValidator.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Validators\\EmployeeValidator.cs",
+              "RelativeDocumentMoniker": "Validators\\EmployeeValidator.cs",
+              "ToolTip": "D:\\HrBackend\\Validators\\EmployeeValidator.cs",
+              "RelativeToolTip": "Validators\\EmployeeValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T12:01:37.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SalaryReportQueryDTO.cs",
+              "DocumentMoniker": "D:\\HrBackend\\DTO\u0027S\\SalaryReport\\SalaryReportQueryDTO.cs",
+              "RelativeDocumentMoniker": "DTO\u0027S\\SalaryReport\\SalaryReportQueryDTO.cs",
+              "ToolTip": "D:\\HrBackend\\DTO\u0027S\\SalaryReport\\SalaryReportQueryDTO.cs",
+              "RelativeToolTip": "DTO\u0027S\\SalaryReport\\SalaryReportQueryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T13:06:25.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoleController.cs",
+              "ToolTip": "D:\\HrBackend\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T11:49:49.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OfficialHolidaysService.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Services\\OfficialHolidaysService.cs",
+              "RelativeDocumentMoniker": "Services\\OfficialHolidaysService.cs",
+              "ToolTip": "D:\\HrBackend\\Services\\OfficialHolidaysService.cs",
+              "RelativeToolTip": "Services\\OfficialHolidaysService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:27:52.404Z"
             }
           ]
         },

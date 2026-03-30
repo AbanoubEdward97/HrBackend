@@ -10,6 +10,8 @@ using System.Text;
 using HrBackend.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi;
+using HrBackend.Mapping;
+using HrBackend.Services;
 //seed Super Admin 
 // async Task SeedSuperAdminAsync(WebApplication app)
 // {
@@ -64,6 +66,14 @@ builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 builder.Services.AddAuthorization();
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
 builder.Services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
+builder.Services.AddScoped<IEmployeesService, EmployeesService>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IGenerallSettingsService, GenerallSettingsService>();
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ISalaryReportService, SalaryReportService>();
+builder.Services.AddScoped<IOfficialHolidaysService, OfficialHolidaysService>();
+
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<HrContext>();
 //builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<JWTService>();
@@ -79,7 +89,11 @@ builder.Services.AddFluentValidationAutoValidation();
 //builder.Services.AddAutoMapper(Action<IMapperConfigurationExpression> configure);
 builder.Services.AddAutoMapper(cfg =>
 {
-    cfg.AddProfile<EmployeeProfile>();  // add as many profiles as you have
+    cfg.AddProfile<EmployeeProfile>();// add as many profiles as you have
+    cfg.AddProfile<DepartmentProfile>();
+    cfg.AddProfile<GSProfile>();
+    cfg.AddProfile<AttendanceProfile>();
+
 });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();

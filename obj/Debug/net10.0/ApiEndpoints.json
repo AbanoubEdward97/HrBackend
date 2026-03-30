@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "HrBackend.Controllers.AttendanceController",
-    "Method": "getAll",
+    "Method": "GetAttendance",
     "RelativePath": "api/Attendance",
     "HttpMethod": "GET",
     "IsController": true,
@@ -69,7 +69,7 @@
   },
   {
     "ContainingType": "HrBackend.Controllers.AttendanceController",
-    "Method": "ImportExcell",
+    "Method": "ImportExcel",
     "RelativePath": "api/Attendance/import",
     "HttpMethod": "POST",
     "IsController": true,
@@ -140,7 +140,7 @@
       },
       {
         "Name": "dto",
-        "Type": "HrBackend.DTO_S.Departments.DeptDTO",
+        "Type": "HrBackend.DTO_S.Departments.UpdateDeptDTO",
         "IsRequired": true
       }
     ],
@@ -170,42 +170,11 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HrApi.Models.Employee, HrBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "HrBackend.Controllers.EmployeesController",
-    "Method": "EditEmployee",
-    "RelativePath": "api/Employees",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "employee",
-        "Type": "HrApi.Models.Employee",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "HrBackend.Controllers.EmployeesController",
-    "Method": "PostEmployee",
+    "Method": "AddEmployee",
     "RelativePath": "api/Employees",
     "HttpMethod": "POST",
     "IsController": true,
@@ -217,17 +186,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "HrApi.Models.Employee",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HrBackend.Controllers.EmployeesController",
@@ -243,17 +202,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "HrApi.Models.Employee",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HrBackend.Controllers.EmployeesController",
@@ -272,8 +221,29 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HrBackend.Controllers.EmployeesController",
+    "Method": "EditEmployee",
+    "RelativePath": "api/Employees/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HrBackend.DTO_S.Employees.UpdateEmpDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HrBackend.Controllers.GeneralSettingsController",
-    "Method": "getGeneralSettings",
+    "Method": "GetSettings",
     "RelativePath": "api/GeneralSettings",
     "HttpMethod": "GET",
     "IsController": true,
@@ -283,17 +253,12 @@
   },
   {
     "ContainingType": "HrBackend.Controllers.GeneralSettingsController",
-    "Method": "UpdateDept",
-    "RelativePath": "api/GeneralSettings/{id}",
+    "Method": "UpdateSettings",
+    "RelativePath": "api/GeneralSettings",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "dto",
         "Type": "HrBackend.DTO_S.GeneralSettings.UpdateGeneralSettingsDTO",
@@ -467,6 +432,32 @@
         "Name": "roleId",
         "Type": "System.Guid",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HrBackend.Controllers.SalaryReportController",
+    "Method": "Get",
+    "RelativePath": "api/SalaryReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EmployeeId",
+        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

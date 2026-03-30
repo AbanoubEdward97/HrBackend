@@ -25,8 +25,8 @@ public class Employee
     /// business data
     public DateOnly HireDate { get; set; }
     public decimal Salary { get; set; }
-    public TimeOnly AttendDate { get; set; }
-    public TimeOnly LeaveDate { get; set; }
-    public bool IsActive { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public DateTime AttendDate { get; set; }
+    public DateTime LeaveDate { get; set; }
+    public bool IsActive { get; set; } = true;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

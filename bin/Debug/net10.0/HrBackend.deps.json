@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "HrBackend/1.0.0": {
         "dependencies": {
-          "AutoMapper": "15.1.0",
+          "AutoMapper": "16.1.0",
           "ClosedXML": "0.105.0",
           "FluentValidation.AspNetCore": "11.3.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
@@ -25,14 +25,14 @@
           "HrBackend.dll": {}
         }
       },
-      "AutoMapper/15.1.0": {
+      "AutoMapper/16.1.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
         },
         "runtime": {
-          "lib/net9.0/AutoMapper.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.1.0.0"
+          "lib/net10.0/AutoMapper.dll": {
+            "assemblyVersion": "16.0.0.0",
+            "fileVersion": "16.1.0.0"
           }
         }
       },
@@ -2170,12 +2170,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AutoMapper/15.1.0": {
+    "AutoMapper/16.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uJXRC0ysO+i3fuW1onh0cUmaLbEwfMWwAZ5nw2eKhYccHwDgRhSC4Qj3rNdBy4vdhnC3r4NinhhldANKNWpH1Q==",
-      "path": "automapper/15.1.0",
-      "hashPath": "automapper.15.1.0.nupkg.sha512"
+      "sha512": "sha512-dslB2z3keOkRdo5N1sWUhTv+37ZXKm2tsJOcUPVOi+Kf1CxkcVsGwH5MeLDKyR+T8WPKwiPq2yhDPMkCfPK16w==",
+      "path": "automapper/16.1.0",
+      "hashPath": "automapper.16.1.0.nupkg.sha512"
     },
     "Azure.Core/1.47.1": {
       "type": "package",

@@ -238,17 +238,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DeptDTO"
+                "$ref": "#/components/schemas/UpdateDeptDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DeptDTO"
+                "$ref": "#/components/schemas/UpdateDeptDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DeptDTO"
+                "$ref": "#/components/schemas/UpdateDeptDTO"
               }
             }
           }
@@ -288,71 +288,6 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Employees"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
             "description": "OK"
           }
         }
@@ -382,24 +317,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -422,24 +340,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -465,6 +366,48 @@
         }
       }
     },
+    "/api/Employees/{Id}": {
+      "put": {
+        "tags": [
+          "Employees"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/GeneralSettings": {
       "get": {
         "tags": [
@@ -475,23 +418,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/GeneralSettings/{id}": {
+      },
       "put": {
         "tags": [
           "GeneralSettings"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -790,6 +720,44 @@
         }
       }
     },
+    "/api/SalaryReport": {
+      "get": {
+        "tags": [
+          "SalaryReport"
+        ],
+        "parameters": [
+          {
+            "name": "Month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "EmployeeId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User": {
       "get": {
         "tags": [
@@ -1078,14 +1046,6 @@
           "role": {
             "type": "string",
             "nullable": true
-          },
-          "permissionGroupIds": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1103,49 +1063,16 @@
         "type": "integer",
         "format": "int32"
       },
-      "Department": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "departmentId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "description": {
-            "maxLength": 250,
-            "type": "string",
-            "nullable": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Employee"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "DeptDTO": {
         "required": [
           "name"
         ],
         "type": "object",
         "properties": {
+          "departmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "maxLength": 100,
             "minLength": 1,
@@ -1165,81 +1092,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Employee": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "birthDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "gender": {
-            "$ref": "#/components/schemas/Gender"
-          },
-          "nationality": {
-            "type": "string",
-            "nullable": true
-          },
-          "nationalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "departmentId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "department": {
-            "$ref": "#/components/schemas/Department"
-          },
-          "hireDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "salary": {
-            "type": "number",
-            "format": "double"
-          },
-          "attendDate": {
-            "type": "string",
-            "format": "time"
-          },
-          "leaveDate": {
-            "type": "string",
-            "format": "time"
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Gender": {
-        "enum": [
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "LoginDto": {
         "type": "object",
@@ -1272,6 +1124,101 @@
               "$ref": "#/components/schemas/CheckBoxDTO"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDeptDTO": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateEmpDTO": {
+        "required": [
+          "attendDate",
+          "birthDate",
+          "departmentId",
+          "gender",
+          "hireDate",
+          "leaveDate",
+          "nationalId",
+          "nationality",
+          "phoneNumber",
+          "salary"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "phoneNumber": {
+            "maxLength": 11,
+            "minLength": 0,
+            "type": "string",
+            "format": "tel"
+          },
+          "gender": {
+            "minLength": 1,
+            "pattern": "^(Male|Female)$",
+            "type": "string"
+          },
+          "nationality": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nationalId": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "hireDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "salary": {
+            "maximum": 1000000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "attendDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leaveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "departmentId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1375,6 +1322,9 @@
     },
     {
       "name": "Role"
+    },
+    {
+      "name": "SalaryReport"
     },
     {
       "name": "User"
