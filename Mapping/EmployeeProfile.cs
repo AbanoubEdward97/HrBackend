@@ -18,8 +18,10 @@ public class EmployeeProfile : Profile
 
         //Map Employee -> EmpDetailsDTO
         CreateMap<Employee, EmpDetailsDTO>()
-            .ForMember(empDtl => empDtl.GenderName, opt => opt.MapFrom(emp => emp.Gender.ToString()));
-
+            .ForMember(empDtl => empDtl.GenderName, opt => opt.MapFrom(emp => emp.Gender.ToString()))
+            .ForMember(d => d.DepartmentName, opt => opt.MapFrom(s => s.Department.Name));
+       
+        
         CreateMap<Employee, UpdateEmpDTO>()
             .ForMember(d => d.Gender,
                 opt => opt.MapFrom(s => s.Gender.ToString()));

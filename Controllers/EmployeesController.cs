@@ -5,6 +5,7 @@ using HrBackend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 namespace HrBackend.Controllers
 {
     [Route("api/[controller]")]
@@ -24,12 +25,23 @@ namespace HrBackend.Controllers
         }
 
         // GET: api/Employees
-        [Authorize(Enums.Permissions.Employees.View)]
+        //[Authorize(Enums.Permissions.Employees.View)]
         //[Authorize(Roles = "Admin,SuperAdmin")]
+        [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> GetEmployees()
+
+        public async Task<IActionResult> GetEmployees([FromQuery] PagingParams pagingParams)
         {
-            var employees = _empService.GetEmployees();//_context.Employees.Include(e => e.Department).AsNoTracking().AsQueryable();
+            var employees = _empService.GetEmployees(pagingParams);//_context.Employees.Include(e => e.Department).AsNoTracking().AsQueryable();
+            var metadata = new
+            {
+                employees.TotalCount,
+                employees.PageSize,
+                employees.CurrentPage,
+                employees.TotalPages,
+                employees.HasNext,
+                employees.HasPrevious
+            };
             //.Select(e => new EmpDetailsDTO
             //{
             //    Address = e.Address,
@@ -50,6 +62,7 @@ namespace HrBackend.Controllers
             //    DepartmentName = e.Department.Name
 
             //}).ToListAsync();
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
             var data = _mapper.Map<IEnumerable<EmpDetailsDTO>>(employees);
             return Ok(data);
         }

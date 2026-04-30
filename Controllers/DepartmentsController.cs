@@ -22,7 +22,8 @@ public class DepartmentsController : ControllerBase
         _departmentService = departmentService;
     }
     [HttpGet]
-    [Authorize(Enums.Permissions.Departments.View)]
+    //[Authorize(Enums.Permissions.Departments.View)]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllDepts()
     {
         //var depts = await _context.Departments.ToListAsync();

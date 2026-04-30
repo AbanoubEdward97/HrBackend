@@ -1,4 +1,5 @@
 ﻿
+using HrBackend.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,9 +32,25 @@ public class EmployeesService : IEmployeesService
         return await _context.Employees.Include(d => d.Department).SingleOrDefaultAsync(e => Id == e.Id);
     }
 
-    public IQueryable<Employee> GetEmployees()
+    public PagedList<Employee> GetEmployees(PagingParams pagingParams)
     {
-        return _context.Employees.Include(e => e.Department).AsNoTracking().AsQueryable();
+        //return _context.Employees.Include(e => e.Department).AsNoTracking().AsQueryable();
+        var query = _context.Employees.Include(e => e.Department).AsQueryable();
+        if (!string.IsNullOrEmpty(pagingParams.Name))
+        {
+            query = query.Where(e => e.Name.Contains(pagingParams.Name));
+        }
+        if (pagingParams.Id.HasValue)
+        {
+            query = query.Where(e => e.Id.ToString().StartsWith(pagingParams.Id.Value.ToString()));
+        }
+        if (!string.IsNullOrEmpty(pagingParams.DepartmentId))
+        {
+            query = query.Where(e => e.DepartmentId.ToString() == pagingParams.DepartmentId);
+        }
+        return PagedList<Employee>.ToPagedList(query.OrderBy(emp => emp.Name),
+        pagingParams.PageNumber,
+        pagingParams.PageSize);
     }
 
     public async Task SaveChanges()
