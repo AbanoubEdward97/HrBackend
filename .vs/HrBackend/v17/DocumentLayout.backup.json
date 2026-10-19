@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\HrBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\data\\hrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:data\\hrcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\mapping\\employeeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:mapping\\employeeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:data\\seed\\defaultusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3688FF4E-C517-E5B1-04CE-82AC21AD246F}|HrBackend.csproj|d:\\hrbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 94,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -142,32 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HrContext.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Data\\HrContext.cs",
-              "RelativeDocumentMoniker": "Data\\HrContext.cs",
-              "ToolTip": "D:\\HrBackend\\Data\\HrContext.cs",
-              "RelativeToolTip": "Data\\HrContext.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-25T14:40:05.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PagingParams.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Models\\PagingParams.cs",
-              "RelativeDocumentMoniker": "Models\\PagingParams.cs",
-              "ToolTip": "D:\\HrBackend\\Models\\PagingParams.cs",
-              "RelativeToolTip": "Models\\PagingParams.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-25T14:29:49.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\HrBackend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -179,7 +154,56 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DefaultUsers.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
+              "RelativeDocumentMoniker": "Data\\seed\\DefaultUsers.cs",
+              "ToolTip": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
+              "RelativeToolTip": "Data\\seed\\DefaultUsers.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwCcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T19:37:59.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\HrBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\HrBackend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-18T13:18:43.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HrContext.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Data\\HrContext.cs",
+              "RelativeDocumentMoniker": "Data\\HrContext.cs",
+              "ToolTip": "D:\\HrBackend\\Data\\HrContext.cs",
+              "RelativeToolTip": "Data\\HrContext.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T14:40:05.591Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "PagingParams.cs",
+              "DocumentMoniker": "D:\\HrBackend\\Models\\PagingParams.cs",
+              "RelativeDocumentMoniker": "Models\\PagingParams.cs",
+              "ToolTip": "D:\\HrBackend\\Models\\PagingParams.cs",
+              "RelativeToolTip": "Models\\PagingParams.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T14:29:49.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "PaginationParams.cs",
               "DocumentMoniker": "D:\\HrBackend\\Models\\PaginationParams.cs",
               "RelativeDocumentMoniker": "Models\\PaginationParams.cs",
@@ -191,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "IEmployeesService.cs",
               "DocumentMoniker": "D:\\HrBackend\\Services\\IEmployeesService.cs",
               "RelativeDocumentMoniker": "Services\\IEmployeesService.cs",
@@ -203,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "EmployeesService.cs",
               "DocumentMoniker": "D:\\HrBackend\\Services\\EmployeesService.cs",
               "RelativeDocumentMoniker": "Services\\EmployeesService.cs",
@@ -215,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DepartmentsController.cs",
               "DocumentMoniker": "D:\\HrBackend\\Controllers\\DepartmentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\DepartmentsController.cs",
@@ -227,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "EmployeesController.cs",
               "DocumentMoniker": "D:\\HrBackend\\Controllers\\EmployeesController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployeesController.cs",
@@ -239,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "EmployeeProfile.cs",
               "DocumentMoniker": "D:\\HrBackend\\Mapping\\EmployeeProfile.cs",
               "RelativeDocumentMoniker": "Mapping\\EmployeeProfile.cs",
@@ -248,18 +272,6 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-25T14:40:23.405Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\HrBackend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\HrBackend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-18T13:18:43.126Z"
             },
             {
               "$type": "Document",
@@ -296,18 +308,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T10:52:58.797Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DefaultUsers.cs",
-              "DocumentMoniker": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
-              "RelativeDocumentMoniker": "Data\\seed\\DefaultUsers.cs",
-              "ToolTip": "D:\\HrBackend\\Data\\seed\\DefaultUsers.cs",
-              "RelativeToolTip": "Data\\seed\\DefaultUsers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T19:37:59.301Z"
             },
             {
               "$type": "Document",

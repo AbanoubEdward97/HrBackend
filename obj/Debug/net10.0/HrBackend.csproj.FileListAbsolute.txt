@@ -664,7 +664,6 @@ D:\HrBackend\obj\Debug\net10.0\staticwebassets.build.json.cache
 D:\HrBackend\obj\Debug\net10.0\staticwebassets.development.json
 D:\HrBackend\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\HrBackend\obj\Debug\net10.0\swae.build.ex.cache
-D:\HrBackend\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\HrBackend\obj\Debug\net10.0\HrBackend.csproj.Up2Date
 D:\HrBackend\obj\Debug\net10.0\HrBackend.dll
 D:\HrBackend\obj\Debug\net10.0\refint\HrBackend.dll
